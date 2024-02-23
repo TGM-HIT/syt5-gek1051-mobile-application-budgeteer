@@ -23,6 +23,7 @@ Other definitions:
 |US05|Als ein Benutzer möchte ich alle Artikel bearbeiten können, um ein Löchen und neu Erstellen zu verhindern.|1|SHOULD|JERT|
 |US06| Als Benutzer möchte ich am Ende des Einkaufs, den Gesamtpreis speicher können, um den Durchnschnittspreis meiner Einkäufe sehen zu können. | 2 | COULD HAVE | JERT |
 |US07| Als Benutzer will ich meine Einkaufsliste auch ohne Internetempfang benutzen können, weil es passieren kann, dass mein Endgerät manchmal kein Internetempfang hat. | 3 | MUST HAVE | KNOA |
-|US08| Als Benutzer will ich, dass die Daten, welche während des Offline Modus ausgewählt worden sind, mit der Online Datenbank aktualiesrt werden, wenn wieder Internetempfang besteht  | 2 | MUST HAVE | DLEN |
+|US08| Als Benutzer will ich, dass die Daten, welche während des Offline Modus ausgewählt worden sind, mit der Online Datenbank aktualiesrt werden, wenn wieder Internetempfang besteht, um eine konsistente Liste zu möglichst jeder Zeit zu haben. | 2 | MUST HAVE | DLEN |
+|US09| | Als Benutzer möchte ich die Möglichkeit haben, die Shopping Liste im Dark Mode auszuführen, um meine Augen zu schonen. | 1 | COULD HAVE | JERT |
 
 

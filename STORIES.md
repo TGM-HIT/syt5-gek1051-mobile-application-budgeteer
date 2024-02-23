@@ -22,6 +22,7 @@ Other definitions:
 | US04 | Als Benutzer möchte ich Artikel in meiner Einkaufsliste nach Kategorien sortieren können, um meinen Einkauf im Laden zu erleichtern und zu beschleunigen. | 2    | COULD HAVE  | LFAB |
 |US05|Als ein Benutzer möchte ich alle Artikel bearbeiten können, um ein Löchen und neu Erstellen zu verhindern.|1|SHOULD|JERT|
 |US06| Als Benutzer möchte ich am Ende des Einkaufs, den Gesamtpreis speicher können, um den Durchnschnittspreis meiner Einkäufe sehen zu können. | 2 | COULD HAVE | JERT |
-|US07| Als Benutzer will ich meine Einkaufsliste auch ohne Internetempfang benutzen können. Wenn mein Endgerät wieder Internetempfang hat, sollen die Daten mit dem Server aktualisiert werden.  | 2 | MUST HAVE | KNOA |
+|US07| Als Benutzer will ich meine Einkaufsliste auch ohne Internetempfang benutzen können, weil es passieren kann, dass mein Endgerät manchmal kein Internetempfang hat. | 3 | MUST HAVE | KNOA |
+|US08| Als Benutzer will ich, dass die Daten, welche während des Offline Modus ausgewählt worden sind, mit der Online Datenbank aktualiesrt werden, wenn wieder Internetempfang besteht  | 2 | MUST HAVE | DLEN |
 
 

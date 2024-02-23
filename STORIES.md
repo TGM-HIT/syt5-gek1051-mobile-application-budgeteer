@@ -21,4 +21,5 @@ Other definitions:
 | US03 | Als Benutzer möchte ich meine Einkaufsliste mit Familie oder Freunden teilen können, damit diese die Liste einsehen, Artikel hinzufügen oder vorhandene abhaken können. | 3    | COULD HAVE  | LFAB |
 | US04 | Als Benutzer möchte ich Artikel in meiner Einkaufsliste nach Kategorien sortieren können, um meinen Einkauf im Laden zu erleichtern und zu beschleunigen. | 2    | COULD HAVE  | LFAB |
 |US05|Als ein Benutzer möchte ich alle Artikel bearbeiten können, um ein Löchen und neu Erstellen zu verhindern.|1|SHOULD|JERT|
+|US06| Als Benutzer möchte ich am Ende des Einkaufs, den Gesamtpreis speicher können, um den Durchnschnittspreis meiner Einkäufe sehen zu können. | 2 | COULD HAVE | JERT |
 

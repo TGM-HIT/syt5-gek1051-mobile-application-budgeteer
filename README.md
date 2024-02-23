@@ -10,8 +10,22 @@ Budgeteer solves these issues with on- and offline synchronisation as well as be
 
 ## Start Points
 
-To start the shopping list application, you have to head to the shopping-list-borko directory (cd shopping-list-borko). After you changed your directory you have 
-to execute the command "npm install". This command installs all npm modules required for this application. After you've installed all the modules execute the command "npm start"
-and access your application in the browser with the address "localhost:8081".
+1. Clone the repository
 
+2. Head to the shopping-list-borko directory (`cd shopping-list-borko`).
+
+3. Install npm dependecies:
+
+```
+npm install
+```
+
+4. Start the application:
+
+```
+npm start
+```
+
+
+5. With the application startet, the shopping list is available under `localhost:8081`
 

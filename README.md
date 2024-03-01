@@ -1,5 +1,14 @@
 # Budgeteer - the free shopping list to manage your budget 
 
+## Who are we
+
+This project takes place as part of the Decentralized Systems lessons in the TGM and includes following people developing:
+
+Ertl Jakob (https://github.com/jertl2)
+Kurzmann Noah (https://github.com/nkurzmann)
+Lengsteiner Daniel (https://github.com/DanielLengsteiner)
+Lujic Fabio (https://github.com/flujic)
+
 ## Intro
 
 We all have experienced it at some point: A forgotten piece of paper lying on our desk while we, straying in the supermarket, wonder what we wanted to buy. 

@@ -1,4 +1,4 @@
-# Budgeteer - the free shopping list to manage your budget
+# Budgeteer - the free shopping list to manage your budget 
 
 ## Intro
 

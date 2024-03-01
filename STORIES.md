@@ -27,5 +27,8 @@ Other definitions:
 |US09| Als Benutzer will ich, dass die Daten, welche während des Offline Modus ausgewählt worden sind, mit der Online Datenbank aktualiesrt werden, wenn wieder Internetempfang besteht, um eine konsistente Liste zu möglichst jeder Zeit zu haben. | 2 | MUST HAVE | DLEN |
 |US10| Als Benutzer möchte ich die Möglichkeit haben, die Shopping Liste im Dark Mode auszuführen, um meine Augen zu schonen. | 1 | COULD HAVE | JERT |
 |US11| Als Benutzer möchte ich mich registrieren und einloggen können, um genau meine Shopping Liste angezeigt zu bekommen. | 3 | MUST HAVE | JERT|
+|US12| Als Benutzer möchte ich die Möglichkeit haben, Artikel in meiner Einkaufsliste mit einer Mengenangabe zu versehen um meinen Einkauf besser planen zu können. | 2 | SCHOULD HAVE | KNOA |
+|US13| Als Benutzer möchte ich eine Erinnerungsfunktion für meine Einkaufsliste haben, um mich auf bestimmte Artikel zu erinnern. | 1 | COULD HAVE | KNOA
+|US14| Als Benutzer möchte ich die Möglichkeit haben, eine Favoritenliste um schnell meine meist gekauften Artikel der Einkaufsliste hinzuzufügen | 2 | COULD HAVE | KNOA
 
 

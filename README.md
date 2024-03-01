@@ -27,5 +27,5 @@ npm start
 ```
 
 
-5. With the application startet, the shopping list is available under `localhost:8081`
+5. With the application startet, the shopping list is available under `localhost:8081`.
 

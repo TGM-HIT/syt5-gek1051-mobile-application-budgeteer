@@ -15,7 +15,6 @@ Other definitions:
 
 |ID|Story|Points|Priority|Head|
 |---|---|---|---|---|
-|US00|Als Benutzer möchte ich Artikel der Einkaufsliste hinzufügen können, um mir diese zu merken|2|MUST|JERT|
 | US01 | Als Benutzer möchte ich sowohl die gesamte Einkaufsliste als auch einzelne Artikel darauf löschen können, um meine Einkaufslisten besser verwalten und organisieren zu können. | 3    | MUST HAVE   | LFAB |
 | US02 | Als Benutzer möchte ich die Reihenfolge der Artikel in meiner Einkaufsliste anpassen können, um die Produkte nach meiner persönlichen Präferenz zu ordnen. | 3    | MUST HAVE   | LFAB |
 | US03 | Als Benutzer möchte ich in meiner Einkaufsliste nach bestimmten Artikeln suchen können, um schnell zu überprüfen, ob diese bereits hinzugefügt oder gekauft wurden. | 2    | SHOULD HAVE | LFAB |

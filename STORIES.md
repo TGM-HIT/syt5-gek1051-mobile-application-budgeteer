@@ -15,7 +15,7 @@ Other definitions:
 
 |ID|Story|Points|Priority|Head|Issue
 |---|---|---|---|---|---|
-|00|Als Benutzer möchte ich Artikel der Einkaufsliste hinzufügen können, um mir diese zu merken|2|MH|JERT| #1 |
+|00|Als Benutzer möchte ich Artikel der Einkaufsliste hinzufügen können, um mir diese zu merken|2|MH|JERT| https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/1#issue-2188089479 |
 | 01 | Als Benutzer möchte ich sowohl die gesamte Einkaufsliste als auch einzelne Artikel darauf löschen können, um meine Einkaufslisten besser verwalten und organisieren zu können. | 3    | MH   | LFAB | #2 |
 | 02 | Als Benutzer möchte ich die Reihenfolge der Artikel in meiner Einkaufsliste anpassen können, um die Produkte nach meiner persönlichen Präferenz zu ordnen. | 3    | MH  | LFAB | #3 |
 | 03 | Als Benutzer möchte ich in meiner Einkaufsliste nach bestimmten Artikeln suchen können, um schnell zu überprüfen, ob diese bereits hinzugefügt oder gekauft wurden. | 2    | SH | LFAB | #4 |

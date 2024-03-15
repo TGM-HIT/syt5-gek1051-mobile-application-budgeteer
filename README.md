@@ -29,7 +29,7 @@ Budgeteer solves these issues with on- and offline synchronisation as well as be
 
 2. Head to the shopping-list-borko directory (`cd shopping-list-borko`).
 
-3. Install npm dependecies:
+3. Install npm dependencies:
 
 ```
 npm install

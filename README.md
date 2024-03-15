@@ -44,3 +44,5 @@ npm start
 
 5. With the application startet, the shopping list is available under `localhost:8081`.
 
+
+6. The Application is also deployed under the url "https://genuine-bublanina-389900.netlify.app/". 

@@ -23,26 +23,6 @@ because it has no offline support.
 
 Budgeteer solves these issues with on- and offline synchronisation as well as being a free program.
 
-## Start Points
+## Accessing the shopping list
 
-1. Clone the repository
-
-2. Head to the shopping-list-borko directory (`cd shopping-list-borko`).
-
-3. Install npm dependencies:
-
-```
-npm install
-```
-
-4. Start the application:
-
-```
-npm start
-```
-
-
-5. With the application startet, the shopping list is available under `localhost:8081`.
-
-
-6. The Application is also deployed under the url "https://genuine-bublanina-389900.netlify.app/". 
+The Application is deployed under the url "https://genuine-bublanina-389900.netlify.app/". This is an always functioning product, so feel free to visit anytime!

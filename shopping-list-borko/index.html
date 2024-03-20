@@ -149,11 +149,11 @@
         <md-list-item>
           <!-- shopping item title -->
           <md-input-container>
-            <md-input v-model="newItemTitle" placeholder="New item e.g. eggs" @keyup.enter.native="onAddListItem"></md-input>
+            <md-input id="itemtitle" v-model="newItemTitle" placeholder="New item e.g. eggs" @keyup.enter.native="onAddListItem"></md-input>
           </md-input-container>
 
           <!-- shopping item add button -->
-          <md-button class="md-icon-button md-list-action" v-on:click="onAddListItem" v-bind:disabled="newItemTitle.length == 0">
+          <md-button id="itemadd" class="md-icon-button md-list-action" v-on:click="onAddListItem" v-bind:disabled="newItemTitle.length == 0">
             <md-icon class="md-primary">add_shopping_cart</md-icon>
           </md-button>
         </md-list-item>
@@ -168,7 +168,7 @@
 
           <!-- shopping list item title -->
           <div class="md-list-text-container">
-            <span v-bind:class="{ cardchecked: item.checked}">{{ item.title }}</span>
+            <span id="iteminlist" v-bind:class="{ cardchecked: item.checked}">{{ item.title }}</span>
           </div>
 
           <!-- shopping list item delete button -->
@@ -218,7 +218,7 @@
 
           <md-card-actions>
             <!-- button to edit the list items -->
-            <md-button v-on:click="onClickList(list._id, list.title)">
+            <md-button id="listitems" v-on:click="onClickList(list._id, list.title)">
                 <md-icon>chevron_right</md-icon>
             </md-button>
           </md-card-actions>

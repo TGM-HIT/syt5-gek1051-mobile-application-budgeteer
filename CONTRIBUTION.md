@@ -31,6 +31,98 @@ npm start
 
 5. With the application startet, the shopping list is available under `localhost:8081`.
 
+
+## API Entry Points
+
+### Initialize PouchDB
+
+```
+// this will be the PouchDB database
+var db = new PouchDB('shopping');
+```
+Here you can see how we create a PouchDB Database with the name "shopping". The changes made locally are saved in this database and will be synced with the CouchDB database, when a connection is established.
+
+### Templates
+
+```
+// template shopping list object
+const sampleShoppingList = {
+	"_id": "",
+	"type": "list",
+	"version": 1,
+	"title": "",
+	"checked": false,
+	"place": {
+		"title": "",
+		"license": null,
+		"lat": null,
+		"lon": null,
+		"address": {}
+	},
+	"createdAt": "",
+	"updatedAt": ""
+};
+
+// template shopping list item object
+const sampleListItem = {
+	"_id": "",
+	"type": "item",
+	"version": 1,
+	"title": "",
+	"checked": false,
+	"createdAt": "",
+	"updatedAt": ""
+};
+```
+Here you can see the shema for the two objects "sampleListItem" and "sampleshoppinglist". This shema shows, which data is needed and will be filled with data later.
+
+## Sorting Functions
+
+```
+/**
+ * Sort comparison function to sort an object by "createdAt" field
+ *
+ * @param  {String} a
+ * @param  {String} b
+ * @returns {Number}
+ */
+const newestFirst = (a, b) => {
+	if (a.createdAt > b.createdAt) return -1;
+	if (a.createdAt < b.createdAt) return 1;
+	return 0 
+};
+
+/**
+ * Sort comparison function to sort an object by "createdAt" field
+ *
+ * @param  {String} a
+ * @param  {String} b
+ * @returns {Number}
+ */
+const checkedItem = (a, b) => {
+	if (a.checked < b.checked) return -1;
+	if (a.checked > b.checked) return 1;
+	return 0 
+};
+```
+These functions are used to sort the Items. The first function "newestFirst" uses the createdAt Data from an object to determine which Item was created first.
+The function "checkedItem" checks with the check Data from an object if a item is checked.
+
+## Ajax Request Function
+
+```
+/**
+ * Perform an "AJAX" request i.e call the URL supplied with the 
+ * a querystring constructed from the supplied object
+ *
+ * @param  {String} url 
+ * @param  {Object} querystring 
+ * @returns {Promise}
+ */
+const ajax = function (url, querystring) {
+```
+This function makes a Ajax Request to a URL to get Data from external Databases. 
+
 ## Additional Infos
 
 Automated actions run on the main branch which deploy the app. To get your changes through, please file a pull request.

@@ -11,6 +11,10 @@ This project takes place as part of the Decentralized Systems lessons in the TGM
 | Lengsteiner Daniel 	| https://github.com/DanielLengsteiner 	| B-Meise             	|
 | Lujic Fabio        	| https://github.com/flujic            	| Product Owner       	|
 
+## Technical Document
+
+You can find our technical Document about the project with this link to [Overleaf](https://www.overleaf.com/project/65f41d465a6e99a691ac9d7f)
+
 ## Contact
 
 For further questions feel free to write an email to the following email address:

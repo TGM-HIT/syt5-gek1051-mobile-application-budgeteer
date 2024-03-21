@@ -133,7 +133,15 @@ We would like to remind you of how to write Commit-Messages. There are certain w
 
 To summarize the Website a little bit, you should always start the Commit Message with a Verb like "Add", "Remove", etc. and then summarize the Work you have done. 
 
+## Branch Rules
 
+### Main Branch
+- Contains all the code and description of the project.
+
+### Pull Requests
+
+- To implement your changes to the main branch, you have to create a Pull Request.
+- The Pull Request has to be reviewed by one contributor of the team, before the changes will be intergrated
 
 # Sources
 

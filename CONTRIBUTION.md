@@ -6,9 +6,17 @@
 
 1. Clone the repository
 
-2. Head to the shopping-list-borko directory (`cd shopping-list-borko`).
+```bash
+git clone https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer.git
+```
 
-3. Install npm dependencies:
+3. Head to the shopping-list-borko directory (`cd shopping-list-borko`).
+
+```bash
+cd shopping-list-borko
+```
+
+4. Install npm dependencies:
 
 ```
 npm install

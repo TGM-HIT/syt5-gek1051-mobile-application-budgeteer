@@ -34,3 +34,15 @@ npm start
 ## Additional Infos
 
 Automated actions run on the main branch which deploy the app. To get your changes through, please file a pull request.
+
+### Commit Messages
+
+We would like to remind you of how to write Commit-Messages. There are certain websites which can help you write good Commit-Messages[1].
+
+To summarize the Website a little bit, you should always start the Commit Message with a Verb like "Add", "Remove", etc. and then summarize the Work you have done. 
+
+
+
+# Sources
+
+[1] Gitcommitmessages (no date) OpenStack. Available at: https://wiki.openstack.org/wiki/GitCommitMessages#Examples_of_good_practice (Accessed: 21 March 2024). 

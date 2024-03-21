@@ -4,10 +4,10 @@
 
 This project takes place as part of the Decentralized Systems lessons in the TGM and includes following people developing:
 
-- Ertl Jakob (https://github.com/jertl2) Ameise
-- Kurzmann Noah (https://github.com/nkurzmann) Technical Architect
-- Lengsteiner Daniel (https://github.com/DanielLengsteiner) Bmeise
-- Lujic Fabio (https://github.com/flujic) Product Owner
+| Ertl Jakob         | https://github.com/jertl2            | A-Meise             |
+| Kurzmann Noah      | https://github.com/nkurzmann         | Technical Architect |
+| Lengsteiner Daniel | https://github.com/DanielLengsteiner | B-Meise             |
+| Lujic Fabio        | https://github.com/flujic            | Product Owner       |
 
 ## Contact
 

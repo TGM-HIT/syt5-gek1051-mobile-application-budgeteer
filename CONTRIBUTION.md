@@ -36,7 +36,7 @@ npm start
 
 ### Initialize PouchDB
 
-```
+```js
 // this will be the PouchDB database
 var db = new PouchDB('shopping');
 ```
@@ -44,7 +44,7 @@ Here you can see how we create a PouchDB Database with the name "shopping". The 
 
 ### Templates
 
-```
+```js
 // template shopping list object
 const sampleShoppingList = {
 	"_id": "",
@@ -78,7 +78,7 @@ Here you can see the shema for the two objects "sampleListItem" and "sampleshopp
 
 ## Sorting Functions
 
-```
+```js
 /**
  * Sort comparison function to sort an object by "createdAt" field
  *
@@ -110,7 +110,7 @@ The function "checkedItem" checks with the check Data from an object if a item i
 
 ## Ajax Request Function
 
-```
+```js
 /**
  * Perform an "AJAX" request i.e call the URL supplied with the 
  * a querystring constructed from the supplied object
@@ -156,17 +156,52 @@ Now select the test type -> configuration files will be created -> Select browse
 The test cases are saved in so-called specs. Describe() describes a series of test cases and it() is the heading of each test case.
 Example:
 
-With cy.visit you can visit a page:
+## Examples
 
-``describe('template spec', () => {`
+With `cy.visit(URL)` you visit the page you want to test:
 
-  `it('Visits Shopping List Webapp', () => {`
+```js
+describe('template spec', () => {
 
-​    `cy.visit('https://genuine-bublanina-389900.netlify.app/')`
+  it('Visits Shopping List Webapp', () => {
 
-  `})`
+​    cy.visit('https://genuine-bublanina-389900.netlify.app/')
 
-`})``
+  })
+
+})
+```
+
+With `cy.get(#ID)` you retrieve an element from the DOM. The ID has to exist.
+Depending on the item the ID is assigned to, you can perform actions such as `.click()` or `.type()`:
+
+```js
+describe('Add list', () => {
+
+  it('Visits Shopping List Webapp and adds a list', () => {
+
+​    cy.visit('https://genuine-bublanina-389900.netlify.app/')
+	cy.get('#addlist').click()					//clicks a button
+	cy.get('#listname').type('Hardwarestore')	//types into a text input
+	cy.get('#placename').type('Hornbach Krems')
+
+  })
+
+})
+```
+
+It is also possible to assert the status of elements via `.should()`:
+
+```js
+describe('Check if Data is stored in PouchDB', () => {
+  it('passes', () => {
+    cy.visit('https://genuine-bublanina-389900.netlify.app/')
+    cy.get('#itemlist').should('be.visible')	//checks if the list is visible
+  })
+})
+```
+
+
 
 ## Additional Infos
 

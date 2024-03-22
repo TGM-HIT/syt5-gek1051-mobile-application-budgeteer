@@ -194,7 +194,7 @@
             <md-speed-dial md-open="hover" md-direction="left" class="md-fab-top-right">
 
               <!-- more ... button -->
-              <md-button class="md-fab" md-fab-trigger>
+              <md-button id="listsettings" class="md-fab" md-fab-trigger>
                 <md-icon md-icon-morph>more_vert</md-icon>
                 <md-icon>more_horiz</md-icon>
               </md-button>
@@ -205,7 +205,7 @@
               </md-button>
             
               <!-- delete button -->
-              <md-button class="md-fab md-primary md-mini md-clean" v-on:click="onClickDelete(list._id)">
+              <md-button id="listdelete" class="md-fab md-primary md-mini md-clean" v-on:click="onClickDelete(list._id)">
                 <md-icon>delete</md-icon>
               </md-button>
             </md-speed-dial>

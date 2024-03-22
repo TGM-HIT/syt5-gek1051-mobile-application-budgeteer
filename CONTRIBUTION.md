@@ -123,6 +123,51 @@ const ajax = function (url, querystring) {
 ```
 This function makes a Ajax Request to a URL to get Data from external Databases. 
 
+## Testing with Cypress
+
+# Testing mit Cypress
+
+With Cypress you can make tests for JavaScript
+
+- Configure Tests
+- Write Tests (from end user perspective, checking API calls, isolated tests without backend)
+- Run tests and debug
+- Evaluate tests
+
+Install directly in the Project Path with:
+
+```shell
+npm install cypress --save-dev
+```
+Head to the shopping-list directory:
+
+```shell
+cd shopping-list-borko
+```
+
+Then open Cypress
+
+```shell
+npx cypress open
+```
+
+Now select the test type -> configuration files will be created -> Select browser and start testing
+
+The test cases are saved in so-called specs. Describe() describes a series of test cases and it() is the heading of each test case.
+Example:
+
+With cy.visit you can visit a page:
+
+``describe('template spec', () => {`
+
+  `it('Visits Shopping List Webapp', () => {`
+
+​    `cy.visit('https://genuine-bublanina-389900.netlify.app/')`
+
+  `})`
+
+`})``
+
 ## Additional Infos
 
 Automated actions run on the main branch which deploy the app. To get your changes through, please file a pull request.

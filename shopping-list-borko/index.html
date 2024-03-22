@@ -159,7 +159,9 @@
         </md-list-item>
 
         <!-- shopping list items -->
-        <md-list-item v-for="item in sortedShoppingListItems" :key="item._id" v-if="item.list == currentListId">
+        <!--<md-list-item v-for="item in sortedShoppingListItems" :key="item._id" v-if="item.list == currentListId"-->
+        <!-- shopping list items -->
+        <md-list-item v-for="item in sortedShoppingListItems" :key="item._id" v-if="item.list == currentListId" draggable="true" @dragstart="dragStart($event, item)" @dragover.prevent @drop="drop($event, item)">
 
           <!-- checkbox against each item -->
           <div>

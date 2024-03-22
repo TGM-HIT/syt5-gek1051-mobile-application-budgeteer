@@ -15,6 +15,14 @@ This project takes place as part of the Decentralized Systems lessons in the TGM
 
 You can find our technical Document about the project with this link to [Overleaf](https://www.overleaf.com/project/65f41d465a6e99a691ac9d7f)
 
+## Stories
+
+You can find our User Stories in the [Stories.md](https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/blob/main/STORIES.md)
+
+## Contribution
+
+If you want to contribute to our project please read through our [Contribution.md](https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/blob/main/CONTRIBUTION.md)
+
 ## Contact
 
 For further questions feel free to write an email to the following email address:

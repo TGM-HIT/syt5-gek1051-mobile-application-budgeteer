@@ -35,7 +35,7 @@ We all have experienced it at some point: A forgotten piece of paper lying on ou
 Then we remember our shopping list app we downloaded yesterday, but it is riddled with ads, and it cannot sync my list in the far corners of the supermarket 
 because it has no offline support.
 
-Budgeteer solves these issues with on- and offline synchronisation as well as being a free program.
+Budgeteer solves these issues with on- and offline synchronisation as well as being a free program. This project expands on the already existing application available under <https://github.com/mborko/shopping-list>. 
 
 ## Accessing the shopping list
 

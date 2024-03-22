@@ -127,7 +127,7 @@ This function makes a Ajax Request to a URL to get Data from external Databases.
 
 # Testing mit Cypress
 
-With Cypress you can make tests for JavaScript
+With Cypress [[2]](#sources) you can make tests for JavaScript
 
 - Configure Tests
 - Write Tests (from end user perspective, checking API calls, isolated tests without backend)
@@ -225,4 +225,6 @@ To summarize the Website a little bit, you should always start the Commit Messag
 
 # Sources
 
-[1] Gitcommitmessages (no date) OpenStack. Available at: https://wiki.openstack.org/wiki/GitCommitMessages#Examples_of_good_practice (Accessed: 21 March 2024). 
+[1] Gitcommitmessages (no date) OpenStack. Available at: <https://wiki.openstack.org/wiki/GitCommitMessages#Examples_of_good_practice> (Accessed: 21 March 2024). 
+
+[2] Cypress documentation. Available at: <https://docs.cypress.io/guides/overview/why-cypress> (Accessed: 22.March. 2024)

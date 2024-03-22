@@ -13,7 +13,7 @@ This project takes place as part of the Decentralized Systems lessons in the TGM
 
 ## Technical Document
 
-You can find our technical Document about the project with this link to [Overleaf](https://www.overleaf.com/project/65f41d465a6e99a691ac9d7f)
+You can find our technical Document about the project with this link to [Overleaf](https://www.overleaf.com/read/zbtjxzycjfvf#d7c076)
 
 ## Stories
 

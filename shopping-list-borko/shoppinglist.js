@@ -28,8 +28,7 @@ const sampleListItem = {
 	"title": "",
 	"checked": false,
 	"createdAt": "",
-	"updatedAt": "",
-	"orderIndex": 0  // Hinzugefügtes Attribut zur Bestimmung der Position des Artikels LFAB
+	"updatedAt": ""
 };
 
 /**
@@ -228,11 +227,6 @@ var app = new Vue({
 		}).catch((e) => {})
 
 	},
-	// LFAB
-	components: {
-		draggable
-  	},
-  
 	methods: {
 		/**
 		 * Called when the settings button is pressed. Sets the mode
@@ -584,32 +578,6 @@ var app = new Vue({
 			db.remove(match.doc).then((data) => {
 				this.shoppingListItems.splice(match.i, 1);
 			});
-		},
-		/**
-		 * LFAB
-		 */
-		dragStart(e, item) {
-			e.dataTransfer.setData('item_id', item._id); // Die ID des gezogenen Artikels übertragen
-		},
-		drop(e, targetItem) {
-			const itemId = e.dataTransfer.getData('item_id');
-			const sourceItem = this.shoppingListItems.find(item => item._id === itemId);
-			this.reorderItems(sourceItem, targetItem);
-		},
-		reorderItems(sourceItem, targetItem) {
-			const sourceIndex = this.shoppingListItems.indexOf(sourceItem);
-			const targetIndex = this.shoppingListItems.indexOf(targetItem);
-	
-			this.shoppingListItems.splice(sourceIndex, 1); // Entfernen des Elements von der ursprünglichen Position
-			this.shoppingListItems.splice(targetIndex, 0, sourceItem); // Einfügen des Elements an der neuen Position
-	
-
-
-
-
-
-
-
-
+		}
 	}
 })

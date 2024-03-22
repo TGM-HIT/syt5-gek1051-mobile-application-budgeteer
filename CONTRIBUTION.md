@@ -139,6 +139,11 @@ Install directly in the Project Path with:
 ```shell
 npm install cypress --save-dev
 ```
+Head to the shopping-list directory:
+
+```shell
+cd shopping-list-borko
+```
 
 Then open Cypress
 

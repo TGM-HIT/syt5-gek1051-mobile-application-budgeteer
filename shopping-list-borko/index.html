@@ -34,7 +34,7 @@
     <md-whiteframe md-elevation="3" class="main-toolbar">
       <md-toolbar>
         <!-- back button -->
-        <md-button class="md-icon-button" v-if="mode != 'showlist'" v-on:click="onBack">
+        <md-button id="returnButton" class="md-icon-button" v-if="mode != 'showlist'" v-on:click="onBack">
             <md-icon>arrow_back</md-icon>
         </md-button>
         
@@ -52,7 +52,7 @@
         </md-button>
 
         <!-- settings -->
-        <md-button class="md-icon-button" v-if="mode == 'showlist'" v-on:click="onClickSettings">
+        <md-button id="settings" class="md-icon-button" v-if="mode == 'showlist'" v-on:click="onClickSettings">
           <md-icon>settings</md-icon>
         </md-button>
         <!-- about -->
@@ -237,7 +237,7 @@
             <!-- Cloudant URL -->
             <md-input-container>
               <label>Sync URL</label>
-              <md-input placeholder="e.g http://localhost:5984/list" type="url" v-model="syncURL"></md-input>
+              <md-input id="syncUrl" placeholder="e.g http://localhost:5984/list" type="url" v-model="syncURL"></md-input>
             </md-input-container>  
 
             <h4>Sync Status</h4>
@@ -250,7 +250,7 @@
 
           <md-card-actions>
             <!-- submit button that saves the Cloudant URL -->
-            <md-button v-on:click="onClickStartSync">
+            <md-button id="syncButton" v-on:click="onClickStartSync">
                 Start Sync
             </md-button>
           </md-card-actions> 

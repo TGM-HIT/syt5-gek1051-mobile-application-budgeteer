@@ -183,7 +183,7 @@
       </md-list> <!-- shopping list item editor -->
 
       <!-- list of shopping lists -->
-      <md-list v-if="mode == 'showlist'">
+      <md-list id="listoflists" v-if="mode == 'showlist'">
         <md-card v-for="list in sortedShoppingLists" :key="list._id" :data-id="list._id">     
           <md-card-header>
             <!-- shopping list title -->

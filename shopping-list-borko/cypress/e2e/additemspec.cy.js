@@ -11,7 +11,7 @@ describe('Items einer Liste hinzufuegen', () => {
     cy.get('#listitems').click()
     cy.get('#itemadd').should('be.disabled');
   })
-  it('besucht die Seite, gibt einem Item einen Namen, ueberprueft ob dieses nach Button Klick hinzugefuegt wurde und ueberpruefr ob dieses nach seiten reload noch da ist', () => {
+  it('besucht die Seite, gibt einem Item einen Namen, ueberprueft ob dieses nach Button Klick hinzugefuegt wurde und ueberprueft ob dieses nach seiten reload noch da ist', () => {
     cy.visit('http://localhost:8081/');
     cy.get('#listitems').click()
     cy.get('#itemtitle').type('Eier');

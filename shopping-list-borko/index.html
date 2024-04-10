@@ -59,6 +59,10 @@
         <md-button class="md-icon-button" v-if="mode == 'showlist'" v-on:click="onClickAbout">
           <md-icon>info_outline</md-icon>
         </md-button>
+        <!-- deleted-lists -->
+        <md-button class="md-icon-button" v-if="mode == 'showlist'" v-on:click="onClickdeletedlists">
+          <md-icon>thumb_up</md-icon>
+        </md-button>
 
       </md-toolbar>
     </md-whiteframe> <!-- top bar -->
@@ -267,6 +271,52 @@
             <!-- No action -->
           </md-card-actions> 
       </md-card> <!-- about -->
+
+      <!-- deleted-lists -->
+      <md-card v-if="mode == 'deleted-lists'">
+      <md-card-header>Deleted Lists</md-card-header>
+        <md-card v-for="list in sortedDeletedShoppingLists" :key="list._id" :data-id="list._id">     
+          <md-card-header>
+            <!-- shopping list title -->
+            <div class="md-title" v-bind:class="{ cardchecked: list.checked}">{{ list.title }}</div>
+
+            <!-- shopping place title -->
+            <div class="md-subhead">{{ list.place.title }}</div>
+
+            <!-- 'speed dial' buttons -->
+            <md-speed-dial md-open="hover" md-direction="left" class="md-fab-top-right">
+
+              <!-- more ... button -->
+              <md-button id="listsettings" class="md-fab" md-fab-trigger>
+                <md-icon md-icon-morph>more_vert</md-icon>
+                <md-icon>more_horiz</md-icon>
+              </md-button>
+            
+              <!-- edit button -->
+              <md-button class="md-fab md-primary md-mini md-clean" v-on:click="onClickEdit(list._id, list.title)">
+                <md-icon>edit</md-icon>
+              </md-button>
+            
+              <!-- delete button -->
+              <md-button id="listdelete" class="md-fab md-primary md-mini md-clean" v-on:click="onClickDelete(list._id)">
+                <md-icon>delete</md-icon>
+              </md-button>
+            </md-speed-dial>
+          </md-card-header>
+
+          <!-- counts of numbers of items in the list and numbers checked e.g 4/10 -->
+          <md-card-content v-if="counts[list._id]">
+            {{ counts[list._id].checked }} / {{ counts[list._id].total }} 
+          </md-card-content>
+
+          <md-card-actions>
+            <!-- button to edit the list items -->
+            <md-button id="listitems" v-on:click="onClickList(list._id, list.title)">
+                <md-icon>chevron_right</md-icon>
+            </md-button>
+          </md-card-actions>
+        </md-card>
+    </md-card> <!-- about -->
 
       <!-- floating 'add shopping list' button -->
       <div id="addlist" class="floatingbutton" v-if="mode == 'showlist'">

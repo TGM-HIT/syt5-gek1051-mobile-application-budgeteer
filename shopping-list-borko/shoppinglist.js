@@ -131,6 +131,7 @@ var app = new Vue({
 		pagetitle: 'Shopping Lists',
 		shoppingLists: [],
 		shoppingListItems: [],
+		deletedshoppingLists: [],
 		singleList: null,
 		currentListId: null,
 		newItemTitle:'',
@@ -164,6 +165,13 @@ var app = new Vue({
 			return obj;
 		},
 		/**
+		 * Gives all the deleted lists
+		 * @returns {Array}
+		*/
+		sortedDeletedShoppingLists: function() {
+			return this.deletedshoppingLists;
+		},
+		/**
 		 * Calculates the shopping list but sorted into
 		 * date order		- newest first,
 		 * alphabetical order	- titleNameSort.
@@ -185,7 +193,7 @@ var app = new Vue({
 			// newestFirst OR titleNameSort
 			this.shoppingListItems.sort(titleNameSort);
 			return this.shoppingListItems.sort(checkedItem);
-		}
+		},
 	},
 	/**
 	 * Called once when the app is first loaded
@@ -194,7 +202,6 @@ var app = new Vue({
 
 		// create database index on 'type'
 		db.createIndex({ index: { fields: ['type'] }}).then(() => {
-
 			// load all 'list' items 
 			var q = {
 				selector: {
@@ -206,7 +213,8 @@ var app = new Vue({
 
 			// write the data to the Vue model, and from there the web page
 			app.shoppingLists = data.docs;
-
+			console.log(data.docs);
+			//app.deletedshoppingLists = data.docs;
 			// get all of the shopping list items
 			var q = {
 				selector: {
@@ -226,6 +234,37 @@ var app = new Vue({
 			this.startSync();
 		}).catch((e) => {})
 
+		var request = indexedDB.open('_pouch_shopping');
+		request.onerror = function(event) {
+			console.log("Error opening indexedDB");
+		}
+		request.onsuccess = function(event) {
+			var db2 = event.target.result;
+			var transaction = db2.transaction(['document-store'], 'readonly');
+			var store = transaction.objectStore('document-store');
+			var index = store.index('deletedOrLocal');
+			var getData = index.getAll();
+			getData.onsuccess = function() {
+				app.deletedshoppingLists = getData.result.map(function(item) {
+					var data = JSON.parse(item.data);
+					var id = data.id;
+					var winningRev = data.winningRev;
+					var deletedOrLocal = item.deletedOrLocal;
+
+					if (deletedOrLocal === "1") {
+						return {id: id, rev: winningRev};
+					} else {
+						return null;
+					}
+				}).filter(function(id) {
+					return id !== null;
+				});
+				//console.log(app.deletedshoppingLists);
+				
+				/**app.deletedshoppingLists = getData.result;
+				console.log(getData.result);*/
+			}
+		}
 	},
 	methods: {
 		/**
@@ -303,11 +342,23 @@ var app = new Vue({
 						var change = info.change.docs[i];
 						var arr = null;
 
+						// if it's a deletion
+						if (change._deleted == true) {
+							// output it
+							//console.log(change);
+							//save it in the app.deletedshoppingLists
+							remoteDb.get(change._id, change._rev).then(function(doc) {
+								console.log(doc);
+							});
+							//console.log(app.deletedshoppingLists);
+
+						}
 						// see if it's an incoming item or list or something else
 						if (change._id.match(/^item/)) {
 							arr = this.shoppingListItems;
 						} else if (change._id.match(/^list/)) {
 							arr = this.shoppingLists;
+							//console.log(arr);
 						} else {
 							continue;
 						}

@@ -136,7 +136,7 @@ var app = new Vue({
 		newItemTitle:'',
 		places: [],
 		selectedPlace: null,
-		syncURL:'',
+		syncURL:'https://apikey-v2-okuw20xktbmma1y05378zrc9eds44zp3rvrp3sxxckt:87b9177c31a91731a0e61f27fb3bf05b@746c698f-7d60-46e7-962a-d9efdd7c9a7d-bluemix.cloudantnosqldb.appdomain.cloud/shopping-list',
 		syncStatus: 'notsyncing'
 	},
 	// computed functions return data derived from the core data.
@@ -241,7 +241,13 @@ var app = new Vue({
 		 */
 		onClickAbout: function() {
 			this.mode = 'about';
-		},    
+		},
+		/**
+		 * Called when the deleted-lists button is pressed.
+		 */    
+		onClickdeletedlists: function() {
+			this.mode = 'deleted-lists';
+		},
 		/**
 		 * Saves 'doc' to PouchDB. It first checks whether that doc
 		 * exists in the database. If it does, it overwrites it - if

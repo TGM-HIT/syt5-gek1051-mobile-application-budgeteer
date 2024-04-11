@@ -293,13 +293,13 @@
               </md-button>
             
               <!-- edit button -->
-              <md-button class="md-fab md-primary md-mini md-clean" v-on:click="onClickEdit(list._id, list.title)">
-                <md-icon>edit</md-icon>
+              <md-button class="md-fab md-primary md-mini md-clean" v-on:click="onclickDeleteFinally(list._id)">
+                <md-icon>delete</md-icon>
               </md-button>
             
               <!-- delete button -->
-              <md-button id="listdelete" class="md-fab md-primary md-mini md-clean" v-on:click="onClickDelete(list._id)">
-                <md-icon>delete</md-icon>
+              <md-button id="listdelete" class="md-fab md-primary md-mini md-clean" v-on:click="onClickRestore(list._id)">
+                <md-icon>restore</md-icon>
               </md-button>
             </md-speed-dial>
           </md-card-header>

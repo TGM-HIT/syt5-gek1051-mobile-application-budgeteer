@@ -17,7 +17,8 @@ const sampleShoppingList = {
 		"address": {}
 	},
 	"createdAt": "",
-	"updatedAt": ""
+	"updatedAt": "",
+	"deleted": false
 };
 
 // template shopping list item object
@@ -169,7 +170,7 @@ var app = new Vue({
 		 * @returns {Array}
 		*/
 		sortedDeletedShoppingLists: function() {
-			return this.deletedshoppingLists;
+			return this.deletedshoppingLists.sort(titleNameSort);
 		},
 		/**
 		 * Calculates the shopping list but sorted into
@@ -180,6 +181,7 @@ var app = new Vue({
 		 */
 		sortedShoppingLists: function() {
 			// newestFirst OR titleNameSort
+			
 			return this.shoppingLists.sort(titleNameSort);
 		},
 		/**
@@ -202,7 +204,7 @@ var app = new Vue({
 
 		// create database index on 'type'
 		db.createIndex({ index: { fields: ['type'] }}).then(() => {
-			// load all 'list' items 
+			// load all 'list' items that are not deleted
 			var q = {
 				selector: {
 					type: 'list'
@@ -212,10 +214,13 @@ var app = new Vue({
 		}).then((data) => {
 
 			// write the data to the Vue model, and from there the web page
-			app.shoppingLists = data.docs;
-			console.log(data.docs);
-			//app.deletedshoppingLists = data.docs;
-			// get all of the shopping list items
+			
+			app.shoppingLists = data.docs.filter(doc => !doc.deleted);
+			app.deletedshoppingLists = data.docs.filter(doc => doc.deleted);
+
+			/** 
+			
+			// get all of the shopping list items*/
 			var q = {
 				selector: {
 					type: 'item'
@@ -224,6 +229,7 @@ var app = new Vue({
 			return db.find(q);
 		}).then((data) => {
 			// write the shopping list items to the Vue model
+
 			app.shoppingListItems = data.docs;
 
 			// load settings (Cloudant sync URL)
@@ -233,7 +239,7 @@ var app = new Vue({
 			this.syncURL = data.syncURL;
 			this.startSync();
 		}).catch((e) => {})
-
+		/** 
 		var request = indexedDB.open('_pouch_shopping');
 		request.onerror = function(event) {
 			console.log("Error opening indexedDB");
@@ -261,10 +267,10 @@ var app = new Vue({
 				});
 				//console.log(app.deletedshoppingLists);
 				
-				/**app.deletedshoppingLists = getData.result;
-				console.log(getData.result);*/
+				app.deletedshoppingLists = getData.result;
+				console.log(getData.result);
 			}
-		}
+		}*/
 	},
 	methods: {
 		/**
@@ -342,23 +348,19 @@ var app = new Vue({
 						var change = info.change.docs[i];
 						var arr = null;
 
-						// if it's a deletion
-						if (change._deleted == true) {
-							// output it
-							//console.log(change);
-							//save it in the app.deletedshoppingLists
-							remoteDb.get(change._id, change._rev).then(function(doc) {
-								console.log(doc);
-							});
-							//console.log(app.deletedshoppingLists);
-
-						}
 						// see if it's an incoming item or list or something else
 						if (change._id.match(/^item/)) {
 							arr = this.shoppingListItems;
 						} else if (change._id.match(/^list/)) {
-							arr = this.shoppingLists;
-							//console.log(arr);
+							if (change.deleted === true) {
+								console.log('deleted list');
+								console.log(change._id, change._deleted)
+								arr = this.deletedshoppingLists;
+							} else {
+								console.log('normal list');
+								arr = this.shoppingLists;
+
+							}
 						} else {
 							continue;
 						}
@@ -372,6 +374,13 @@ var app = new Vue({
 							if (change._deleted == true) {
 								// remove it
 								arr.splice(match.i, 1);
+								if (arr === this.deletedshoppingLists) {
+									let matchInShoppingLists = this.findDoc(this.shoppingLists, change._id);
+									if (matchInShoppingLists.doc) {
+										Vue.set(this.shoppingLists, matchInShoppingLists.i, null);
+										this.shoppingLists = this.shoppingLists.filter(item => item !== null);
+									}
+								}
 							} else {
 								// modify it
 								delete change._revisions;
@@ -529,8 +538,43 @@ var app = new Vue({
 		 */
 		onClickDelete: function(id) {
 			var match = this.findDoc(this.shoppingLists, id);
-			db.remove(match.doc).then(() => {
+			db.get(match.doc._id).then((doc) => {
+				doc.deleted = true;
+				return this.saveLocalDoc(doc);
+			}).then(() => {
+				match.doc.deleted = true;
+				this.deletedshoppingLists.unshift(JSON.parse(JSON.stringify(match.doc)));
 				this.shoppingLists.splice(match.i, 1);
+			});
+		},
+
+		/**
+		 * Fully deletes a shopping list from the database.
+		 * @param {String} id 
+		 */
+		onclickDeleteFinally: function(id) {
+			var match = this.findDoc(this.deletedshoppingLists, id);
+			db.get(match.doc._id).then((doc) => {
+				return db.remove(doc);
+			}).then(() => {
+				this.deletedshoppingLists.splice(match.i, 1);
+			}).catch((err) => {
+				console.log(err);
+			});
+		},
+
+		/**
+		 * Called when the user wants to restore a deleted shopping list.
+		 */
+		onClickRestore: function(id) {
+			var match = this.findDoc(this.deletedshoppingLists, id);
+			db.get(match.doc._id).then((doc) => {
+				doc.deleted = false;
+				return this.saveLocalDoc(doc);
+			}).then(() => {
+				match.doc.deleted = false;
+				this.shoppingLists.unshift(JSON.parse(JSON.stringify(match.doc)));
+				this.deletedshoppingLists.splice(match.i, 1);
 			});
 		},
 

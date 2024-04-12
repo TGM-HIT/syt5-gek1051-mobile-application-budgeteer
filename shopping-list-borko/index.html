@@ -60,7 +60,7 @@
           <md-icon>info_outline</md-icon>
         </md-button>
         <!-- deleted-lists -->
-        <md-button class="md-icon-button" v-if="mode == 'showlist'" v-on:click="onClickdeletedlists">
+        <md-button id="deletedLists" class="md-icon-button" v-if="mode == 'showlist'" v-on:click="onClickdeletedlists">
           <md-icon>delete</md-icon>
         </md-button>
 
@@ -298,7 +298,7 @@
               </md-button>
             
               <!-- delete button -->
-              <md-button id="listdelete" class="md-fab md-primary md-mini md-clean" v-on:click="onClickRestore(list._id)">
+              <md-button id="restore" class="md-fab md-primary md-mini md-clean" v-on:click="onClickRestore(list._id)">
                 <md-icon>restore</md-icon>
               </md-button>
             </md-speed-dial>

@@ -351,13 +351,16 @@ var app = new Vue({
 						// see if it's an incoming item or list or something else
 						if (change._id.match(/^item/)) {
 							arr = this.shoppingListItems;
+							console.log("test");
 						} else if (change._id.match(/^list/)) {
 							if (change.deleted === true) {
-								console.log('deleted list');
-								console.log(change._id, change._deleted)
+								//console.log(change.deleted)
+								//console.log('deleted list');
+								//console.log(change._id, change.deleted)
 								arr = this.deletedshoppingLists;
 							} else {
-								console.log('normal list');
+								//console.log(change.deleted)
+								//console.log('normal list');
 								arr = this.shoppingLists;
 
 							}

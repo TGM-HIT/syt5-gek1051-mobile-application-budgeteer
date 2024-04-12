@@ -31,3 +31,4 @@ Other definitions:
 |12| Als Benutzer möchte ich die Möglichkeit haben, gelöschte Listen wiederherrzustellen. | 2 | SH | KNOA | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/13 |
 |13| Als Benutzer möchte ich eine Erinnerungsfunktion für meine Einkaufsliste haben, um mich auf bestimmte Artikel zu erinnern. | 1 | N2H | KNOA | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/14 |
 |14| Als Benutzer möchte ich die Möglichkeit haben, eine Favoritenliste um schnell meine meist gekauften Artikel der Einkaufsliste hinzuzufügen | 2 | N2H | KNOA | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/15 |
+|15| Als Benutzer möchte ich eine Statistik zu meinem Einkaufsverhalten anzeigen lassen können, um dieses besser zu beobachten. | 2 | N2H | DLEN | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/17 |

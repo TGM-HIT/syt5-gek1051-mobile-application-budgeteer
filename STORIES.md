@@ -29,5 +29,5 @@ Other definitions:
 |10| Als Benutzer möchte ich die Möglichkeit haben, die Shopping Liste im Dark Mode auszuführen, um meine Augen zu schonen. | 1 | N2H| JERT | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/11 |
 |11| Als Benutzer möchte ich mich registrieren und einloggen können, um genau meine Shopping Liste angezeigt zu bekommen. | 3 | N2H | JERT| https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/12 |
 |12| Als Benutzer möchte ich die Möglichkeit haben, gelöschte Listen wiederherrzustellen. | 2 | SH | KNOA | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/13 |
-|13| Als Benutzer möchte ich eine Erinnerungsfunktion für meine Einkaufsliste haben, um mich auf bestimmte Artikel zu erinnern. | 1 | N2H | KNOA | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/14 |
-|14| Als Benutzer möchte ich die Möglichkeit haben, eine Favoritenliste um schnell meine meist gekauften Artikel der Einkaufsliste hinzuzufügen | 2 | N2H | KNOA | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/15 |
+|13| Als Benutzer möchte ich die gelöschten Listen in der seperaten Auflistung entgültig löschen können. | 1 | N2H | KNOA | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/14 |
+|14| Als Benutzer möchte ich die Möglichkeit haben, alle gelöschten Listen in einer seperaten Auflistung zu sehen. | 2 | N2H | KNOA | https://github.com/TGM-HIT/syt5-gek1051-mobile-application-budgeteer/issues/15 |
